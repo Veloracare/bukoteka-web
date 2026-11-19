@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bukoteka — svi termini na svom mjestu</title>
+<meta name="description" content="Bukoteka je jednostavan raspored termina za salone i male uslužne obrte. Svi termini na svom mjestu. Radi u pregledniku na mobitelu i računalu.">
+<meta name="theme-color" content="#eca49d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27%3E%3Crect width=%27192%27 height=%27192%27 rx=%2744%27 fill=%27%23eca49d%27/%3E%3Cpath d=%27M47 54h98M96 54v91m-25-61 25 25 36-36%27 fill=%27none%27 stroke=%27white%27 stroke-width=%2711%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<!--
+  NACRT — ne objavljivati bez Ivanova odobrenja.
+  Bez vanjskih skripti, trackera, kolačića i fontova s tuđih poslužitelja.
+  Fontovi aplikacije (Manrope, DM Sans) ovdje se NE učitavaju s Google Fonts zbog privatnosti;
+  ako se žele, datoteke fontova treba smjestiti uz stranicu (self-host).
+  Rezervirana mjesta za popuniti: https://taman-termini-ivan.ivan-brezac.chatgpt.site/, https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html, [CIJENA — čeka potvrdu], [BROJ — čeka eSIM].
+  Obrazac se za sada šalje preko mailto:advisory@veloracare.io (otvara korisnikov program za e-poštu); nema vanjskog servisa za obrasce.
+-->
+<style>
+/* Boje i stil preuzeti iz aplikacije (web/style.css, kasnija pravila: koraljna tema).
+   Kontrast: tekst na koraljnoj je tamni #292b30 (7,3:1); poveznice tamnija tirkizna #3f7487 (5,0:1); sivi tekst #6b686c (5,3:1). */
+:root{--ink:#292b30;--muted:#6b686c;--coral:#edaaa3;--coral-2:#eca49d;--coral-hover:#df9992;--coral-dot:#e2a19a;--coral-soft:#fbe9e6;--teal:#629bae;--teal-2:#65a2b5;--teal-text:#3f7487;--teal-soft:#e8f1f4;--line:#eeeceb;--bg:#fbfaf9;--card:#fff;--warn:#8a5a00;--warn-bg:#fff4d6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3,.brand{font-family:Manrope,'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:var(--teal-text)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--teal-text);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* header + brand (isto kao <aside> u aplikaciji) */
+.top{position:sticky;top:0;z-index:5;background:rgba(251,250,249,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px;font-weight:800;font-size:27px;letter-spacing:-1.5px;width:max-content}
+.brandmark{background:var(--coral-2);color:#fff;width:35px;height:35px;border-radius:11px;display:grid;place-items:center;transform:rotate(-7deg)}
+.brandmark svg{width:22px;height:22px;transform:rotate(7deg)}
+.brand .dot{color:var(--coral-dot)}
+.topnav{display:flex;align-items:center;gap:8px}
+.lang{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);cursor:pointer;min-height:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;border-radius:15px;padding:14px 20px;min-height:50px;font-weight:600;font-size:15px}
+.btn-primary{background:var(--coral);color:var(--ink);box-shadow:0 5px 14px #c8888020}
+.btn-primary:hover{background:var(--coral-hover)}
+.btn-light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-small{padding:8px 14px;min-height:36px;font-size:13px;border-radius:12px}
+.btn[aria-disabled=true]{cursor:not-allowed}
+/* hero */
+.hero{padding-top:40px;padding-bottom:32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+h1{font-weight:700;font-size:clamp(34px,8vw,52px);line-height:1.12;letter-spacing:-1.6px;margin:0 0 16px}
+h1 em{font-style:normal;color:var(--teal-text)}
+.lead{font-size:18px;color:var(--muted);max-width:620px;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+/* sections */
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-weight:700;font-size:clamp(24px,5vw,32px);letter-spacing:-.8px;line-height:1.2;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:640px}
+.grid{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid #f0edeb;border-radius:26px;padding:22px}
+.card h3{font-size:17px;margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.ic{width:38px;height:38px;border-radius:12px;background:var(--teal-soft);color:var(--teal-text);display:grid;place-items:center;margin-bottom:12px}
+.ic svg{width:20px;height:20px}
+/* offers */
+.offer{display:flex;flex-direction:column}
+.offer.hl{border:2px solid var(--coral)}
+.tag{display:inline-block;align-self:flex-start;background:var(--coral-soft);color:var(--ink);font-size:12px;font-weight:700;border-radius:8px;padding:4px 9px;margin-bottom:10px}
+.offer.hl .tag{background:var(--coral)}
+.price{font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:18px;margin:14px 0 4px;color:var(--ink)}
+.placeholder{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:1px 6px;font-size:14px;font-weight:600}
+.offer ul{margin:12px 0 0;padding-left:20px;color:var(--ink);font-size:15px}
+.offer li{margin:4px 0}
+/* trial */
+.trial{background:var(--ink);color:#fff;border-radius:26px;padding:26px}
+.trial h2{color:#fff}
+.trial p{color:#dcdadd;margin:0 0 10px}
+.trial ul{margin:12px 0 0;padding-left:20px}
+.trial li{margin:6px 0}
+.trial .accent{color:var(--coral)}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative}
+.steps li.card{padding-left:60px}
+.steps li:before{content:counter(s);position:absolute;left:22px;top:22px;width:26px;height:26px;border-radius:9px;background:var(--coral);color:var(--ink);font-weight:700;font-size:13px;display:grid;place-items:center}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:'+';color:var(--teal-text);font-size:20px;line-height:1}
+details[open] summary:after{content:'–'}
+details p{margin:0 0 16px;color:var(--muted)}
+/* video */
+.videobox{position:relative;margin:0;aspect-ratio:16/9;width:100%;border-radius:26px;overflow:hidden;background:var(--coral-soft);border:1px solid #f0edeb}
+.videobox.vertical{aspect-ratio:9/16;max-width:360px;margin:0 auto}
+.videobox video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:transparent}
+.videobox .poster{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:12px;pointer-events:none;color:var(--ink);font-size:17px}
+.videobox.playing .poster{display:none}
+.videobox .brandmark{width:52px;height:52px;border-radius:15px}
+.videobox .brandmark svg{width:30px;height:30px}
+/* contact + form */
+.contact{background:var(--coral-soft);border-radius:26px;padding:22px}
+.contact>p{margin:0 0 16px}
+form.interest{background:#fff;border:1px solid #f0edeb;border-radius:22px;padding:20px;display:grid;gap:14px;margin:0 0 18px}
+form.interest label{display:block;font-size:14px;font-weight:600}
+form.interest input[type=text],form.interest input[type=email],form.interest select{display:block;width:100%;min-width:0;min-height:48px;margin-top:6px;border:1px solid #dcd8d6;border-radius:12px;padding:11px 12px;background:#fcfbfa;color:var(--ink);font:inherit;font-size:16px}
+.consent{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;font-size:14px!important;line-height:1.5}
+.consent input{width:20px;height:20px;margin:2px 0 0;flex-shrink:0;accent-color:var(--teal-text)}
+.formnote{font-size:13px;color:var(--muted);margin:0}
+.formerror{color:#a3352b;font-size:14px;font-weight:600;margin:0}
+.wa{border-top:1px solid #f1d6d2;padding-top:18px;margin-top:4px}
+.wa p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:10px}
+footer a{color:var(--muted)}
+/* language toggle */
+[lang=en] .hr,html:not([lang=en]) .en{display:none}
+@media (min-width:720px){
+  .hero{padding-top:72px;padding-bottom:56px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .trial,.contact{padding:36px}
+  form.interest{grid-template-columns:1fr 1fr;padding:26px}
+  form.interest .full{grid-column:1/-1}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Bukoteka"><span class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 6h14M12 6v13m-4-7 4 4 6-6"/></svg></span><span>bukoteka<span class="dot">.</span></span></a>
+    <div class="topnav">
+      <button class="lang" type="button" id="langBtn" aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-small" href="#kontakt"><span class="hr">Kontakt</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="wrap hero">
+  <p class="eyebrow"><span class="hr">Raspored za salone i male uslužne obrte</span><span class="en">Scheduling for salons and small service businesses</span></p>
+  <h1 class="hr">Svi termini <em>na svom mjestu.</em></h1>
+  <h1 class="en">Every appointment <em>in its place.</em></h1>
+  <p class="lead hr">Bukoteka je jednostavan raspored termina za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte. Termine upisuješ sam nakon poziva, a po želji klijenti mogu rezervirati i sami preko poveznice.</p>
+  <p class="lead en">Bukoteka is a simple appointment schedule for hair and beauty salons, nail studios, barbers, massage and other service businesses. Add appointments yourself after a call, or let clients book through a link.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/"><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a>
+    <a class="btn btn-light" href="#video"><span class="hr">Pogledaj kako radi (1 min)</span><span class="en">See how it works (1 min)</span></a>
+  </div>
+  <p class="note hr">Bez kartice. Radi u pregledniku na mobitelu i računalu, uz internetsku vezu.</p>
+  <p class="note en">No card needed. Works in the browser on phone and computer, with an internet connection.</p>
+</div>
+
+<!-- VIDEO -->
+<section id="video">
+  <div class="wrap">
+    <h2 class="hr">Pogledaj kako radi</h2><h2 class="en">See how it works</h2>
+    <p class="sub hr">Minuta u aplikaciji, na izmišljenom testnom salonu.</p>
+    <p class="sub en">One minute in the app, using a fictional test salon.</p>
+    <!-- Za uspravni video (9:16) dodaj klasu "vertical" na .videobox. Datoteke: video/bukoteka-promo.mp4, video/bukoteka-poster.jpg (još ne postoje; nova naracija u work/video/naracija-bukoteka.md). -->
+    <figure class="videobox" id="videobox">
+      <video id="promo" controls preload="none" playsinline poster="video/bukoteka-poster.jpg" aria-label="Bukoteka — kako radi">
+        <source src="video/bukoteka-promo.mp4" type="video/mp4">
+      </video>
+      <div class="poster" aria-hidden="true">
+        <span class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 6h14M12 6v13m-4-7 4 4 6-6"/></svg></span>
+        <strong class="hr">Video uskoro</strong><strong class="en">Video coming soon</strong>
+      </div>
+    </figure>
+    <p class="note hr">Video nema automatsko pokretanje. Prikazani podaci su testni.</p>
+    <p class="note en">The video does not play automatically. All data shown is test data.</p>
+  </div>
+</section>
+
+<!-- ŠTO RADI -->
+<section id="sto-radi">
+  <div class="wrap">
+    <h2 class="hr">Što Bukoteka radi</h2><h2 class="en">What Bukoteka does</h2>
+    <p class="sub hr">Ono što ti treba za vođenje termina, bez bilježnice i dugog traženja slobodnog vremena.</p>
+    <p class="sub en">What you need to manage appointments, without a paper diary or hunting for free time.</p>
+    <div class="grid g3">
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4m8-4v4"/></svg></div>
+        <h3 class="hr">Raspored</h3><h3 class="en">Schedule</h3>
+        <p class="hr">Usluge i trajanja, radno vrijeme, dnevni odmori, slobodni dani i hrvatski blagdani na jednom mjestu.</p>
+        <p class="en">Services and durations, opening hours, daily breaks, days off and Croatian public holidays in one place.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3 class="hr">Brzi upis</h3><h3 class="en">Quick entry</h3>
+        <p class="hr">Dodirni prazno mjesto u rasporedu, odaberi uslugu i klijenta. Vrijeme početka možeš namjestiti na bilo koju minutu.</p>
+        <p class="en">Tap an empty slot, choose a service and a client. The start time can be set to any minute.</p>
+      </div>
+      <div class="card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div>
+        <h3 class="hr">Klijenti</h3><h3 class="en">Clients</h3>
+        <p class="hr">Ime i telefon, spremljeni klijenti, odabir kontakta na podržanim mobitelima ili uvoz .vcf kontakta.</p>
+        <p class="en">Name and phone, saved clients, contact picker on supported phones or .vcf contact import.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DVIJE PONUDE -->
+<section id="ponude">
+  <div class="wrap">
+    <h2 class="hr">Dvije ponude</h2><h2 class="en">Two plans</h2>
+    <p class="sub hr">Biraš hoćeš li termine upisivati samo ti ili ćeš klijentima dati i poveznicu za rezervaciju.</p>
+    <p class="sub en">Choose whether only you add appointments, or clients can also book through a link.</p>
+    <div class="grid g2">
+      <div class="card offer">
+        <span class="tag">Bukoteka</span>
+        <h3 class="hr">Ti upisuješ termine</h3><h3 class="en">You add the appointments</h3>
+        <p class="hr">Za salone koji se dogovaraju telefonom ili porukom. Nakon razgovora termin upišeš u nekoliko dodira.</p>
+        <p class="en">For businesses that book by phone or message. After the call, add the appointment in a few taps.</p>
+        <ul class="hr"><li>raspored, usluge, radno vrijeme i odmori</li><li>klijenti i brzi upis</li><li>hrvatski i engleski</li></ul>
+        <ul class="en"><li>schedule, services, hours and breaks</li><li>clients and quick entry</li><li>Croatian and English</li></ul>
+        <p class="price"><span class="placeholder">[CIJENA — čeka potvrdu]</span></p>
+      </div>
+      <div class="card offer hl">
+        <span class="tag">Bukoteka Online</span>
+        <h3 class="hr">Klijenti rezerviraju i sami</h3><h3 class="en">Clients can also book themselves</h3>
+        <p class="hr">Sve iz paketa Bukoteka, uz poveznicu za rezervacije koju možeš podijeliti na društvenim mrežama ili na Google profilu tvrtke.</p>
+        <p class="en">Everything in Bukoteka, plus a booking link you can share on social media or your Google Business Profile.</p>
+        <ul class="hr"><li>klijent ne treba račun</li><li>ti određuješ pravila promjene i otkazivanja</li><li>online rezervacije uključuješ i isključuješ u Postavkama</li></ul>
+        <ul class="en"><li>clients don't need an account</li><li>you set the change and cancellation rules</li><li>turn online booking on or off in Settings</li></ul>
+        <p class="price"><span class="placeholder">[CIJENA — čeka potvrdu]</span></p>
+      </div>
+    </div>
+    <p class="note hr">Cijene još nisu konačne i bit će objavljene nakon potvrde.</p>
+    <p class="note en">Prices are not final yet and will be published once confirmed.</p>
+  </div>
+</section>
+
+<!-- PROBA -->
+<section id="proba">
+  <div class="wrap">
+    <div class="trial">
+      <h2 class="hr">30 dana besplatno</h2><h2 class="en">30 days free</h2>
+      <p class="hr">Proba počinje kad otvoriš svoj salon u aplikaciji i traje 30 dana.</p>
+      <p class="en">The trial starts when you set up your business in the app and lasts 30 days.</p>
+      <ul class="hr">
+        <li><span class="accent">Bez kartice</span> i bez automatske naplate.</li>
+        <li>Nakon probe i dalje možeš pregledati i izvesti svoje podatke.</li>
+        <li>Za nove upise i izmjene potrebna je pretplata.</li>
+      </ul>
+      <ul class="en">
+        <li><span class="accent">No card</span> and no automatic charge.</li>
+        <li>After the trial you can still view and export your data.</li>
+        <li>New entries and changes require a subscription.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- KAKO RADI -->
+<section id="kako">
+  <div class="wrap">
+    <h2 class="hr">Kako počinješ</h2><h2 class="en">How it works</h2>
+    <p class="sub hr">Kratak vodič u aplikaciji provede te kroz prve korake. Možeš ga preskočiti i ponovno pokrenuti.</p>
+    <p class="sub en">A short guide in the app walks you through the first steps. You can skip it and run it again later.</p>
+    <ol class="steps grid">
+      <li class="card"><h3 class="hr">Prijavi se Googleom</h3><h3 class="en">Sign in with Google</h3>
+        <p class="hr">Otvori Bukoteku u pregledniku i odaberi Nastavi s Googleom. Svaki salon ima svoj odvojeni račun.</p>
+        <p class="en">Open Bukoteka in your browser and choose Continue with Google. Each business has its own separate account.</p></li>
+      <li class="card"><h3 class="hr">Postavi salon</h3><h3 class="en">Set up your business</h3>
+        <p class="hr">Upiši usluge i trajanja, radne dane, odmore i slobodne dane.</p>
+        <p class="en">Add services and durations, working days, breaks and days off.</p></li>
+      <li class="card"><h3 class="hr">Upisuj termine</h3><h3 class="en">Add appointments</h3>
+        <p class="hr">Dodirni prazno mjesto u rasporedu. Uz Bukoteku Online podijeli poveznicu za rezervacije.</p>
+        <p class="en">Tap an empty slot in the schedule. With Bukoteka Online, share your booking link.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="pitanja">
+  <div class="wrap">
+    <h2 class="hr">Česta pitanja</h2><h2 class="en">FAQ</h2>
+    <div class="hr">
+      <details><summary>Trebam li instalirati aplikaciju?</summary><p>Ne. Bukoteka radi u pregledniku na mobitelu, tabletu i računalu. Nije u App Storeu ni Google Playu. Potrebna je internetska veza.</p></details>
+      <details><summary>Što se događa nakon 30 dana probe?</summary><p>Ništa se ne naplaćuje automatski. Podatke i dalje možeš pregledati i izvesti, a za nove upise i izmjene biraš pretplatu.</p></details>
+      <details><summary>Moraju li moji klijenti imati račun?</summary><p>Ne. Uz Bukoteku Online klijent otvara poveznicu salona, bira uslugu i vrijeme te upisuje ime i telefon. Dobiva svoju poveznicu za promjenu ili otkazivanje prema tvojim pravilima.</p></details>
+      <details><summary>Šalje li Bukoteka SMS podsjetnike klijentima?</summary><p>Ne. Bukoteka trenutno ne šalje automatske SMS ni e-mail poruke.</p></details>
+      <details><summary>Može li više djelatnika imati svoj raspored?</summary><p>Zasad ne. Bukoteka je napravljena za jedan raspored po salonu. Isti raspored možeš otvoriti na više uređaja istim računom.</p></details>
+    </div>
+    <div class="en">
+      <details><summary>Do I need to install an app?</summary><p>No. Bukoteka runs in the browser on phone, tablet and computer. It is not in the App Store or Google Play. An internet connection is required.</p></details>
+      <details><summary>What happens after the 30-day trial?</summary><p>Nothing is charged automatically. You can still view and export your data; new entries and changes need a subscription.</p></details>
+      <details><summary>Do my clients need an account?</summary><p>No. With Bukoteka Online, clients open your booking link, pick a service and time, and enter their name and phone. They get their own link to change or cancel under your rules.</p></details>
+      <details><summary>Does Bukoteka send SMS reminders?</summary><p>No. Bukoteka does not currently send automatic SMS or email messages.</p></details>
+      <details><summary>Can several staff members have their own schedules?</summary><p>Not yet. Bukoteka is built for one schedule per business. You can open the same schedule on several devices with the same account.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="wrap">
+    <div class="contact">
+      <h2 class="hr">Želiš probati Bukoteku uz našu pomoć?</h2><h2 class="en">Want to try Bukoteka with our help?</h2>
+      <p class="hr"><strong>Javi nam se.</strong> Ostavi nekoliko podataka i javit ćemo ti se da zajedno postavimo tvoj salon u Bukoteci. Bez obveze.</p>
+      <p class="en"><strong>Get in touch.</strong> Leave a few details and we'll get back to you to set up your business in Bukoteka together. No obligation.</p>
+
+      <form class="interest" id="interest" action="mailto:advisory@veloracare.io" method="post" enctype="text/plain" novalidate>
+        <label><span class="hr">Naziv salona</span><span class="en">Business name</span>
+          <input type="text" name="salon" id="f-salon" required maxlength="100" autocomplete="organization"></label>
+        <label><span class="hr">Ime</span><span class="en">Your name</span>
+          <input type="text" name="ime" id="f-ime" required maxlength="80" autocomplete="name"></label>
+        <label><span class="hr">E-mail ili telefon</span><span class="en">Email or phone</span>
+          <input type="text" name="kontakt" id="f-kontakt" required maxlength="120" autocomplete="email" inputmode="email"></label>
+        <label><span class="hr">Djelatnost</span><span class="en">Type of business</span>
+          <select name="djelatnost" id="f-djelatnost" required>
+            <option value="">— odaberi / choose —</option>
+            <option>Frizerski salon / Hair salon</option>
+            <option>Kozmetički salon / Beauty salon</option>
+            <option>Salon za nokte / Nail studio</option>
+            <option>Brijačnica / Barber</option>
+            <option>Masaža / Massage</option>
+            <option>Drugo / Other</option>
+          </select></label>
+        <label class="full"><span class="hr">Grad</span><span class="en">Town or city</span>
+          <input type="text" name="grad" id="f-grad" required maxlength="80" autocomplete="address-level2"></label>
+        <label class="consent full"><input type="checkbox" name="privola" id="f-privola" value="da" required>
+          <span class="hr">Pristajem da me Velora kontaktira u vezi s Bukotekom na navedeni e-mail ili telefon. Privolu mogu povući u bilo kojem trenutku. <a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html">Zaštita privatnosti</a></span>
+          <span class="en">I agree that Velora may contact me about Bukoteka at the email or phone above. I can withdraw this consent at any time. <a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html">Privacy</a></span></label>
+        <p class="formerror full" id="f-error" role="alert" hidden></p>
+        <div class="full">
+          <button class="btn btn-primary" type="submit"><span class="hr">Pošalji</span><span class="en">Send</span></button>
+        </div>
+        <p class="formnote full"><span class="hr">Klikom se otvara tvoj program za e-poštu s pripremljenom porukom na advisory@veloracare.io. Ništa se ne šalje dok poruku sam ne pošalješ.</span><span class="en">This opens your email app with a prepared message to advisory@veloracare.io. Nothing is sent until you send it yourself.</span></p>
+      </form>
+
+      <div class="wa">
+        <p class="hr">Radije pišeš na WhatsApp? Napiši nam prvi, odgovorit ćemo. Ne šaljemo poruke bez tvog upita.</p>
+        <p class="en">Prefer WhatsApp? Message us first and we'll reply. We don't send messages you didn't ask for.</p>
+        <!-- Zamijeniti href s https://wa.me/<broj> kad broj bude aktivan. -->
+        <a class="btn btn-light" href="#kontakt" aria-disabled="true" title="Broj još nije aktivan"><span class="hr">Pošalji poruku na WhatsApp</span><span class="en">Message us on WhatsApp</span> <span class="placeholder">[BROJ — čeka eSIM]</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Bukoteka</strong> <span class="hr">je proizvod tvrtke Velora.</span><span class="en">is made by Velora.</span></div>
+    <div><a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html"><span class="hr">Zaštita privatnosti</span><span class="en">Privacy</span></a> · <span class="hr">Stranica ne koristi kolačiće.</span><span class="en">This site uses no cookies.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('langBtn'),h=document.documentElement;
+  b.addEventListener('click',function(){
+    var en=h.lang!=='en';
+    h.lang=en?'en':'hr';
+    b.textContent=en?'HR':'EN';
+    b.setAttribute('aria-label',en?'Prebaci na hrvatski':'Switch to English');
+  });
+  var f=document.getElementById('interest'),err=document.getElementById('f-error');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var en=h.lang==='en',ids=['salon','ime','kontakt','djelatnost','grad'],v={},miss=false;
+    ids.forEach(function(k){var el=document.getElementById('f-'+k);v[k]=el.value.trim();if(!v[k])miss=true;});
+    if(miss){err.textContent=en?'Please fill in all fields.':'Molimo ispuni sva polja.';err.hidden=false;return;}
+    if(!document.getElementById('f-privola').checked){err.textContent=en?'Please tick the consent box so we can contact you.':'Označi privolu kako bismo ti se mogli javiti.';err.hidden=false;return;}
+    err.hidden=true;
+    var body='Naziv salona: '+v.salon+'\nIme: '+v.ime+'\nE-mail ili telefon: '+v.kontakt+'\nDjelatnost: '+v.djelatnost+'\nGrad: '+v.grad+'\nPrivola za kontakt u vezi s Bukotekom: da\n';
+    window.location.href='mailto:advisory@veloracare.io?subject='+encodeURIComponent('Bukoteka — pilot: '+v.salon)+'&body='+encodeURIComponent(body);
+  });
+  var vb=document.getElementById('videobox'),vd=document.getElementById('promo');
+  vd.addEventListener('play',function(){vb.classList.add('playing');});
+  document.querySelectorAll('[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+})();
+</script>
+</body>
+</html>
