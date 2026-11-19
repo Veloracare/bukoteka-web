@@ -6,7 +6,7 @@
 <title>Bukoteka — svi termini na svom mjestu</title>
 <meta name="description" content="Bukoteka je jednostavan raspored termina za salone i male uslužne obrte. Svi termini na svom mjestu. Radi u pregledniku na mobitelu i računalu.">
 <meta name="theme-color" content="#eca49d">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 192 192%27%3E%3Crect width=%27192%27 height=%27192%27 rx=%2744%27 fill=%27%23eca49d%27/%3E%3Cpath d=%27M47 54h98M96 54v91m-25-61 25 25 36-36%27 fill=%27none%27 stroke=%27white%27 stroke-width=%2711%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <!--
   NACRT — ne objavljivati bez Ivanova odobrenja.
   Bez vanjskih skripti, trackera, kolačića i fontova s tuđih poslužitelja.
@@ -32,7 +32,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 .brand{text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px;font-weight:800;font-size:27px;letter-spacing:-1.5px;width:max-content}
 .brandmark{background:var(--coral-2);color:#fff;width:35px;height:35px;border-radius:11px;display:grid;place-items:center;transform:rotate(-7deg)}
 .brandmark svg{width:22px;height:22px;transform:rotate(7deg)}
-.brand .dot{color:var(--coral-dot)}
+.brandicon{width:35px;height:35px;border-radius:9px;display:block}
 .topnav{display:flex;align-items:center;gap:8px}
 .lang{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);cursor:pointer;min-height:36px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;border-radius:15px;padding:14px 20px;min-height:50px;font-weight:600;font-size:15px}
@@ -130,7 +130,7 @@ footer a{color:var(--muted)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="Bukoteka"><span class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 6h14M12 6v13m-4-7 4 4 6-6"/></svg></span><span>bukoteka<span class="dot">.</span></span></a>
+    <a class="brand" href="#" aria-label="Bukoteka"><img class="brandicon" src="favicon.svg" width="35" height="35" alt=""><span>bukoteka</span></a>
     <div class="topnav">
       <button class="lang" type="button" id="langBtn" aria-label="Switch to English">EN</button>
       <a class="btn btn-primary btn-small" href="#kontakt"><span class="hr">Kontakt</span><span class="en">Contact</span></a>
@@ -160,15 +160,11 @@ footer a{color:var(--muted)}
     <h2 class="hr">Pogledaj kako radi</h2><h2 class="en">See how it works</h2>
     <p class="sub hr">Minuta u aplikaciji, na izmišljenom testnom salonu.</p>
     <p class="sub en">One minute in the app, using a fictional test salon.</p>
-    <!-- Za uspravni video (9:16) dodaj klasu "vertical" na .videobox. Datoteke: video/bukoteka-promo.mp4, video/bukoteka-poster.jpg (još ne postoje; nova naracija u work/video/naracija-bukoteka.md). -->
-    <figure class="videobox" id="videobox">
+    
+    <figure class="videobox vertical" id="videobox">
       <video id="promo" controls preload="none" playsinline poster="video/bukoteka-poster.jpg" aria-label="Bukoteka — kako radi">
         <source src="video/bukoteka-promo.mp4" type="video/mp4">
       </video>
-      <div class="poster" aria-hidden="true">
-        <span class="brandmark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 6h14M12 6v13m-4-7 4 4 6-6"/></svg></span>
-        <strong class="hr">Video uskoro</strong><strong class="en">Video coming soon</strong>
-      </div>
     </figure>
     <p class="note hr">Video nema automatsko pokretanje. Prikazani podaci su testni.</p>
     <p class="note en">The video does not play automatically. All data shown is test data.</p>
