@@ -7,12 +7,26 @@
 <meta name="description" content="Bukoteka je jednostavan raspored termina za salone i male uslužne obrte. Svi termini na svom mjestu. Radi u pregledniku na mobitelu i računalu.">
 <meta name="theme-color" content="#eca49d">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://bukoteka.hr/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bukoteka">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:title" content="Bukoteka — svi termini na svom mjestu">
+<meta property="og:description" content="Jednostavan raspored termina za salone i male uslužne obrte. Radi u pregledniku na mobitelu i računalu.">
+<meta property="og:url" content="https://bukoteka.hr/">
+<meta property="og:image" content="https://bukoteka.hr/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <!--
-  NACRT — ne objavljivati bez Ivanova odobrenja.
+  STATUS (2026-11-21): pripremljeno za domenu bukoteka.hr na grani domena-bukoteka-hr (CNAME, /privatnost, /uvjeti,
+  /podrska, /brisanje-racuna, 404, robots.txt, sitemap.xml, video „Kako se koristi Bukoteka” po odluci D-42). NIJE objavljeno: spajanje u main i objava samo uz Ivanovo odobrenje.
+  Uvjeti korištenja su nacrt s oznakama [OTVORENO] i nisu odobreni.
   Bez vanjskih skripti, trackera, kolačića i fontova s tuđih poslužitelja.
   Fontovi aplikacije (Manrope, DM Sans) ovdje se NE učitavaju s Google Fonts zbog privatnosti;
   ako se žele, datoteke fontova treba smjestiti uz stranicu (self-host).
-  Rezervirana mjesta za popuniti: https://taman-termini-ivan.ivan-brezac.chatgpt.site/, https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html, [CIJENA — čeka potvrdu], [BROJ — čeka eSIM].
+  Rezervirana mjesta za popuniti: poveznica aplikacije (zasad https://taman-termini-ivan.ivan-brezac.chatgpt.site/, mijenja se kad se aplikacija preseli), [CIJENA — čeka potvrdu], [BROJ — čeka eSIM].
   Obrazac se za sada šalje preko mailto:advisory@veloracare.io (otvara korisnikov program za e-poštu); nema vanjskog servisa za obrasce.
 -->
 <style>
@@ -171,6 +185,22 @@ footer a{color:var(--muted)}
   </div>
 </section>
 
+<!-- UPUTE (video odobren, odluka D-42) -->
+<section id="upute">
+  <div class="wrap">
+    <h2 class="hr">Kako se koristi Bukoteka</h2><h2 class="en">How to use Bukoteka</h2>
+    <p class="sub hr">Sedam kratkih koraka u aplikaciji, od postavljanja usluga do potvrde online rezervacije. Bez zvuka, s naslovima koraka.</p>
+    <p class="sub en">Seven short steps in the app, from setting up services to confirming an online booking. No sound; step titles are shown on screen (in Croatian).</p>
+    <figure class="videobox vertical">
+      <video controls muted preload="none" playsinline poster="video/bukoteka-kako-se-koristi-poster.jpg" aria-label="Kako se koristi Bukoteka">
+        <source src="video/bukoteka-kako-se-koristi.mp4" type="video/mp4">
+      </video>
+    </figure>
+    <p class="note hr">Video nema automatsko pokretanje. Prikazani podaci su testni (izmišljeni salon i klijenti).</p>
+    <p class="note en">The video does not play automatically. All data shown is test data (a fictional salon and clients).</p>
+  </div>
+</section>
+
 <!-- ŠTO RADI -->
 <section id="sto-radi">
   <div class="wrap">
@@ -201,6 +231,7 @@ footer a{color:var(--muted)}
 </section>
 
 <!-- DVIJE PONUDE -->
+<!-- NAPOMENA: odluka D-13 kaže jedan paket s uključenim online rezervacijama. Struktura s dva paketa i cijene ostaju dok Ivan ne odobri izmjenu. -->
 <section id="ponude">
   <div class="wrap">
     <h2 class="hr">Dvije ponude</h2><h2 class="en">Two plans</h2>
@@ -259,9 +290,9 @@ footer a{color:var(--muted)}
     <p class="sub hr">Kratak vodič u aplikaciji provede te kroz prve korake. Možeš ga preskočiti i ponovno pokrenuti.</p>
     <p class="sub en">A short guide in the app walks you through the first steps. You can skip it and run it again later.</p>
     <ol class="steps grid">
-      <li class="card"><h3 class="hr">Prijavi se Googleom</h3><h3 class="en">Sign in with Google</h3>
-        <p class="hr">Otvori Bukoteku u pregledniku i odaberi Nastavi s Googleom. Svaki salon ima svoj odvojeni račun.</p>
-        <p class="en">Open Bukoteka in your browser and choose Continue with Google. Each business has its own separate account.</p></li>
+      <li class="card"><h3 class="hr">Prijavi se</h3><h3 class="en">Sign in</h3>
+        <p class="hr">Otvori Bukoteku i prijavi se Googleom, e-mailom i lozinkom ili, na iPhoneu, Appleom. Svaki salon ima svoj odvojeni račun.</p>
+        <p class="en">Open Bukoteka and sign in with Google, with e-mail and password or, on iPhone, with Apple. Each business has its own separate account.</p></li>
       <li class="card"><h3 class="hr">Postavi salon</h3><h3 class="en">Set up your business</h3>
         <p class="hr">Upiši usluge i trajanja, radne dane, odmore i slobodne dane.</p>
         <p class="en">Add services and durations, working days, breaks and days off.</p></li>
@@ -281,14 +312,14 @@ footer a{color:var(--muted)}
       <details><summary>Što se događa nakon 30 dana probe?</summary><p>Ništa se ne naplaćuje automatski. Podatke i dalje možeš pregledati i izvesti, a za nove upise i izmjene biraš pretplatu.</p></details>
       <details><summary>Moraju li moji klijenti imati račun?</summary><p>Ne. Uz Bukoteku Online klijent otvara poveznicu salona, bira uslugu i vrijeme te upisuje ime i telefon. Dobiva svoju poveznicu za promjenu ili otkazivanje prema tvojim pravilima.</p></details>
       <details><summary>Šalje li Bukoteka SMS podsjetnike klijentima?</summary><p>Ne. Bukoteka trenutno ne šalje automatske SMS ni e-mail poruke.</p></details>
-      <details><summary>Može li više djelatnika imati svoj raspored?</summary><p>Zasad ne. Bukoteka je napravljena za jedan raspored po salonu. Isti raspored možeš otvoriti na više uređaja istim računom.</p></details>
+      <details><summary>Može li više djelatnika imati svoj raspored?</summary><p>Da. Ako u salonu radi više osoba, svakoj upišeš radno vrijeme i usluge koje radi, a svaki termin vežeš uz osobu koja pruža uslugu. Djelatnicima možeš poslati poveznicu za prijavu i ukinuti im pristup kad želiš.</p></details>
     </div>
     <div class="en">
       <details><summary>Do I need to install an app?</summary><p>No. Bukoteka runs in the browser on phone, tablet and computer. It is not in the App Store or Google Play. An internet connection is required.</p></details>
       <details><summary>What happens after the 30-day trial?</summary><p>Nothing is charged automatically. You can still view and export your data; new entries and changes need a subscription.</p></details>
       <details><summary>Do my clients need an account?</summary><p>No. With Bukoteka Online, clients open your booking link, pick a service and time, and enter their name and phone. They get their own link to change or cancel under your rules.</p></details>
       <details><summary>Does Bukoteka send SMS reminders?</summary><p>No. Bukoteka does not currently send automatic SMS or email messages.</p></details>
-      <details><summary>Can several staff members have their own schedules?</summary><p>Not yet. Bukoteka is built for one schedule per business. You can open the same schedule on several devices with the same account.</p></details>
+      <details><summary>Can several staff members have their own schedules?</summary><p>Yes. If several people work at your business, you set each person's working hours and services, and each appointment is linked to the person providing it. You can send staff a sign-in link and revoke their access at any time.</p></details>
     </div>
   </div>
 </section>
@@ -321,8 +352,8 @@ footer a{color:var(--muted)}
         <label class="full"><span class="hr">Grad</span><span class="en">Town or city</span>
           <input type="text" name="grad" id="f-grad" required maxlength="80" autocomplete="address-level2"></label>
         <label class="consent full"><input type="checkbox" name="privola" id="f-privola" value="da" required>
-          <span class="hr">Pristajem da me Velora kontaktira u vezi s Bukotekom na navedeni e-mail ili telefon. Privolu mogu povući u bilo kojem trenutku. <a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html">Zaštita privatnosti</a></span>
-          <span class="en">I agree that Velora may contact me about Bukoteka at the email or phone above. I can withdraw this consent at any time. <a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html">Privacy</a></span></label>
+          <span class="hr">Pristajem da me Velora kontaktira u vezi s Bukotekom na navedeni e-mail ili telefon. Privolu mogu povući u bilo kojem trenutku. <a href="/privatnost">Zaštita privatnosti</a></span>
+          <span class="en">I agree that Velora may contact me about Bukoteka at the email or phone above. I can withdraw this consent at any time. <a href="/privatnost?lang=en">Privacy</a></span></label>
         <p class="formerror full" id="f-error" role="alert" hidden></p>
         <div class="full">
           <button class="btn btn-primary" type="submit"><span class="hr">Pošalji</span><span class="en">Send</span></button>
@@ -344,7 +375,7 @@ footer a{color:var(--muted)}
 <footer>
   <div class="wrap">
     <div><strong>Bukoteka</strong> <span class="hr">je proizvod tvrtke Velora.</span><span class="en">is made by Velora.</span></div>
-    <div><a href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/privacy.html"><span class="hr">Zaštita privatnosti</span><span class="en">Privacy</span></a> · <span class="hr">Stranica ne koristi kolačiće.</span><span class="en">This site uses no cookies.</span></div>
+    <div><a href="/privatnost"><span class="hr">Zaštita privatnosti</span><span class="en">Privacy</span></a> · <a href="/uvjeti"><span class="hr">Uvjeti korištenja</span><span class="en">Terms</span></a> · <a href="/podrska"><span class="hr">Podrška</span><span class="en">Support</span></a> · <span class="hr">Stranica ne koristi kolačiće.</span><span class="en">This site uses no cookies.</span></div>
   </div>
 </footer>
 
@@ -368,8 +399,9 @@ footer a{color:var(--muted)}
     var body='Naziv salona: '+v.salon+'\nIme: '+v.ime+'\nE-mail ili telefon: '+v.kontakt+'\nDjelatnost: '+v.djelatnost+'\nGrad: '+v.grad+'\nPrivola za kontakt u vezi s Bukotekom: da\n';
     window.location.href='mailto:advisory@veloracare.io?subject='+encodeURIComponent('Bukoteka — pilot: '+v.salon)+'&body='+encodeURIComponent(body);
   });
-  var vb=document.getElementById('videobox'),vd=document.getElementById('promo');
-  vd.addEventListener('play',function(){vb.classList.add('playing');});
+  document.querySelectorAll('.videobox video').forEach(function(vd){
+    vd.addEventListener('play',function(){vd.parentNode.classList.add('playing');});
+  });
   document.querySelectorAll('[aria-disabled=true]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
 })();
 </script>

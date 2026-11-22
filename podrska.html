@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bukoteka — podrška</title>
+<meta name="description" content="Podrška za Bukoteku: kako nam se javiti i što napisati u poruci. Bukoteka support.">
+<meta name="theme-color" content="#eca49d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://bukoteka.hr/podrska">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bukoteka">
+<meta property="og:locale" content="hr_HR">
+<meta property="og:title" content="Bukoteka — podrška">
+<meta property="og:description" content="Podrška za Bukoteku: kako nam se javiti i što napisati u poruci. Bukoteka support.">
+<meta property="og:url" content="https://bukoteka.hr/podrska">
+<meta property="og:image" content="https://bukoteka.hr/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Pripremljeno za bukoteka.hr (grana domena-bukoteka-hr). Ne objavljivati bez Ivanova odobrenja. Stil, zaglavlje i podnožje preuzeti iz index.html. -->
+<style>
+/* Boje i stil preuzeti iz aplikacije (web/style.css, kasnija pravila: koraljna tema).
+   Kontrast: tekst na koraljnoj je tamni #292b30 (7,3:1); poveznice tamnija tirkizna #3f7487 (5,0:1); sivi tekst #6b686c (5,3:1). */
+:root{--ink:#292b30;--muted:#6b686c;--coral:#edaaa3;--coral-2:#eca49d;--coral-hover:#df9992;--coral-dot:#e2a19a;--coral-soft:#fbe9e6;--teal:#629bae;--teal-2:#65a2b5;--teal-text:#3f7487;--teal-soft:#e8f1f4;--line:#eeeceb;--bg:#fbfaf9;--card:#fff;--warn:#8a5a00;--warn-bg:#fff4d6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3,.brand{font-family:Manrope,'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+a{color:var(--teal-text)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--teal-text);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+/* header + brand (isto kao <aside> u aplikaciji) */
+.top{position:sticky;top:0;z-index:5;background:rgba(251,250,249,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{text-decoration:none;color:var(--ink);display:flex;align-items:center;gap:10px;font-weight:800;font-size:27px;letter-spacing:-1.5px;width:max-content}
+.brandmark{background:var(--coral-2);color:#fff;width:35px;height:35px;border-radius:11px;display:grid;place-items:center;transform:rotate(-7deg)}
+.brandmark svg{width:22px;height:22px;transform:rotate(7deg)}
+.brandicon{width:35px;height:35px;border-radius:9px;display:block}
+.topnav{display:flex;align-items:center;gap:8px}
+.lang{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-family:inherit;font-weight:600;font-size:13px;color:var(--ink);cursor:pointer;min-height:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;border-radius:15px;padding:14px 20px;min-height:50px;font-weight:600;font-size:15px}
+.btn-primary{background:var(--coral);color:var(--ink);box-shadow:0 5px 14px #c8888020}
+.btn-primary:hover{background:var(--coral-hover)}
+.btn-light{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn-small{padding:8px 14px;min-height:36px;font-size:13px;border-radius:12px}
+.btn[aria-disabled=true]{cursor:not-allowed}
+/* hero */
+.hero{padding-top:40px;padding-bottom:32px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+h1{font-weight:700;font-size:clamp(34px,8vw,52px);line-height:1.12;letter-spacing:-1.6px;margin:0 0 16px}
+h1 em{font-style:normal;color:var(--teal-text)}
+.lead{font-size:18px;color:var(--muted);max-width:620px;margin:0 0 24px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+/* sections */
+section{padding:36px 0;border-top:1px solid var(--line)}
+h2{font-weight:700;font-size:clamp(24px,5vw,32px);letter-spacing:-.8px;line-height:1.2;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 24px;max-width:640px}
+.grid{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid #f0edeb;border-radius:26px;padding:22px}
+.card h3{font-size:17px;margin:0 0 6px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.ic{width:38px;height:38px;border-radius:12px;background:var(--teal-soft);color:var(--teal-text);display:grid;place-items:center;margin-bottom:12px}
+.ic svg{width:20px;height:20px}
+/* offers */
+.offer{display:flex;flex-direction:column}
+.offer.hl{border:2px solid var(--coral)}
+.tag{display:inline-block;align-self:flex-start;background:var(--coral-soft);color:var(--ink);font-size:12px;font-weight:700;border-radius:8px;padding:4px 9px;margin-bottom:10px}
+.offer.hl .tag{background:var(--coral)}
+.price{font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:18px;margin:14px 0 4px;color:var(--ink)}
+.placeholder{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:1px 6px;font-size:14px;font-weight:600}
+.offer ul{margin:12px 0 0;padding-left:20px;color:var(--ink);font-size:15px}
+.offer li{margin:4px 0}
+/* trial */
+.trial{background:var(--ink);color:#fff;border-radius:26px;padding:26px}
+.trial h2{color:#fff}
+.trial p{color:#dcdadd;margin:0 0 10px}
+.trial ul{margin:12px 0 0;padding-left:20px}
+.trial li{margin:6px 0}
+.trial .accent{color:var(--coral)}
+/* steps */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative}
+.steps li.card{padding-left:60px}
+.steps li:before{content:counter(s);position:absolute;left:22px;top:22px;width:26px;height:26px;border-radius:9px;background:var(--coral);color:var(--ink);font-weight:700;font-size:13px;display:grid;place-items:center}
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:'+';color:var(--teal-text);font-size:20px;line-height:1}
+details[open] summary:after{content:'–'}
+details p{margin:0 0 16px;color:var(--muted)}
+/* video */
+.videobox{position:relative;margin:0;aspect-ratio:16/9;width:100%;border-radius:26px;overflow:hidden;background:var(--coral-soft);border:1px solid #f0edeb}
+.videobox.vertical{aspect-ratio:9/16;max-width:360px;margin:0 auto}
+.videobox video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:transparent}
+.videobox .poster{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:12px;pointer-events:none;color:var(--ink);font-size:17px}
+.videobox.playing .poster{display:none}
+.videobox .brandmark{width:52px;height:52px;border-radius:15px}
+.videobox .brandmark svg{width:30px;height:30px}
+/* contact + form */
+.contact{background:var(--coral-soft);border-radius:26px;padding:22px}
+.contact>p{margin:0 0 16px}
+form.interest{background:#fff;border:1px solid #f0edeb;border-radius:22px;padding:20px;display:grid;gap:14px;margin:0 0 18px}
+form.interest label{display:block;font-size:14px;font-weight:600}
+form.interest input[type=text],form.interest input[type=email],form.interest select{display:block;width:100%;min-width:0;min-height:48px;margin-top:6px;border:1px solid #dcd8d6;border-radius:12px;padding:11px 12px;background:#fcfbfa;color:var(--ink);font:inherit;font-size:16px}
+.consent{display:flex!important;gap:10px;align-items:flex-start;font-weight:400!important;font-size:14px!important;line-height:1.5}
+.consent input{width:20px;height:20px;margin:2px 0 0;flex-shrink:0;accent-color:var(--teal-text)}
+.formnote{font-size:13px;color:var(--muted);margin:0}
+.formerror{color:#a3352b;font-size:14px;font-weight:600;margin:0}
+.wa{border-top:1px solid #f1d6d2;padding-top:18px;margin-top:4px}
+.wa p{margin:0 0 10px;font-size:14px;color:var(--muted)}
+/* footer */
+footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:grid;gap:10px}
+footer a{color:var(--muted)}
+/* language toggle */
+[lang=en] .hr,html:not([lang=en]) .en{display:none}
+@media (min-width:720px){
+  .hero{padding-top:72px;padding-bottom:56px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .trial,.contact{padding:36px}
+  form.interest{grid-template-columns:1fr 1fr;padding:26px}
+  form.interest .full{grid-column:1/-1}
+  footer .wrap{grid-template-columns:1fr auto;align-items:center}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* tekstne stranice (privatnost, uvjeti, podrška, brisanje računa, 404) */
+.doc{max-width:760px;padding-top:40px;padding-bottom:48px}
+.doc h1{font-size:clamp(30px,7vw,42px)}
+.doc h2{font-size:21px;letter-spacing:-.3px;margin:30px 0 8px}
+.doc h3{font-size:17px;margin:20px 0 6px}
+.doc ul,.doc ol{padding-left:22px}
+.doc li{margin:6px 0}
+.draftnote{background:var(--warn-bg);color:var(--warn);border-radius:14px;padding:12px 14px;font-weight:600;font-size:15px}
+.doc .card{margin:18px 0}
+.doc .card p{color:var(--ink);font-size:16px}
+.doc .hint{font-size:14px;color:var(--muted);margin-top:28px}
+.newpara{border-left:3px solid var(--coral);padding-left:14px}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bukoteka"><img class="brandicon" src="/favicon.svg" width="35" height="35" alt=""><span>bukoteka</span></a>
+    <div class="topnav">
+      <button class="lang" type="button" id="langBtn" aria-label="Switch to English">EN</button>
+      <a class="btn btn-primary btn-small" href="/#kontakt"><span class="hr">Kontakt</span><span class="en">Contact</span></a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap doc">
+<article class="hr">
+<p class="eyebrow">Bukoteka · Velora</p>
+<h1>Podrška.</h1>
+<p>Trebaš pomoć s Bukotekom, nešto ne radi kako očekuješ ili imaš prijedlog? Piši nam na <a href="mailto:advisory@veloracare.io?subject=Bukoteka%20%E2%80%93%20podr%C5%A1ka">advisory@veloracare.io</a>.</p>
+
+<h2>Što napisati u poruci</h2>
+<ul>
+<li>naziv salona i e-mail kojim se prijavljuješ u Bukoteku;</li>
+<li>uređaj i način na koji koristiš Bukoteku (npr. iPhone, Android ili računalo; preglednik ili aplikacija);</li>
+<li>što si pokušao napraviti i što se dogodilo, a ako se javila poruka o pogrešci, njezin tekst;</li>
+<li>po želji snimku zaslona.</li>
+</ul>
+<p>U poruku ne upisuj lozinku ni podatke svojih klijenata koji nam za rješavanje nisu potrebni.</p>
+
+<h2>Gdje radi Bukoteka</h2>
+<p>Bukoteka radi u pregledniku na mobitelu, tabletu i računalu te kao aplikacija za iOS i Android. Potrebna je internetska veza.</p>
+
+<h2>Korisne poveznice</h2>
+<ul>
+<li><a href="/brisanje-racuna">Brisanje računa i podataka</a></li>
+<li><a href="/privatnost">Zaštita privatnosti</a></li>
+<li><a href="/uvjeti">Uvjeti korištenja</a> (nacrt)</li>
+<li><a href="/#pitanja">Česta pitanja</a></li>
+</ul>
+</article>
+
+<article class="en">
+<p class="eyebrow">Bukoteka · Velora</p>
+<h1>Support.</h1>
+<p>Need help with Bukoteka, something not working as expected, or have a suggestion? Write to us at <a href="mailto:advisory@veloracare.io?subject=Bukoteka%20%E2%80%93%20support">advisory@veloracare.io</a>.</p>
+
+<h2>What to include in your message</h2>
+<ul>
+<li>your business name and the e-mail you use to sign in to Bukoteka;</li>
+<li>your device and how you use Bukoteka (for example iPhone, Android or computer; browser or app);</li>
+<li>what you tried to do and what happened, and the text of any error message;</li>
+<li>a screenshot, if you like.</li>
+</ul>
+<p>Please don't include your password or any of your clients' data that we don't need to solve the issue.</p>
+
+<h2>Where Bukoteka works</h2>
+<p>Bukoteka works in the browser on phone, tablet and computer, and as an app for iOS and Android. An internet connection is required.</p>
+
+<h2>Useful links</h2>
+<ul>
+<li><a href="/brisanje-racuna?lang=en">Delete your account and data</a></li>
+<li><a href="/privatnost?lang=en">Privacy</a></li>
+<li><a href="/uvjeti?lang=en">Terms of use</a> (draft, Croatian)</li>
+<li><a href="/#pitanja">FAQ</a></li>
+</ul>
+</article>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Bukoteka</strong> <span class="hr">je proizvod tvrtke Velora.</span><span class="en">is made by Velora.</span></div>
+    <div><a href="/privatnost"><span class="hr">Zaštita privatnosti</span><span class="en">Privacy</span></a> · <a href="/uvjeti"><span class="hr">Uvjeti korištenja</span><span class="en">Terms</span></a> · <a href="/podrska"><span class="hr">Podrška</span><span class="en">Support</span></a> · <span class="hr">Stranica ne koristi kolačiće.</span><span class="en">This site uses no cookies.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('langBtn'),h=document.documentElement;
+  function set(en){
+    h.lang=en?'en':'hr';
+    b.textContent=en?'HR':'EN';
+    b.setAttribute('aria-label',en?'Prebaci na hrvatski':'Switch to English');
+  }
+  try{if(new URLSearchParams(location.search).get('lang')==='en')set(true);}catch(e){}
+  b.addEventListener('click',function(){set(h.lang!=='en');});
+})();
+</script>
+</body>
+</html>
