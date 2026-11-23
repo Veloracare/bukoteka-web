@@ -95,6 +95,14 @@ h2 .dot{color:var(--accent-strong)}
 .blob.b2{width:320px;height:320px;background:#cfe3ea;bottom:-80px;left:-120px;animation:drift 22s ease-in-out infinite alternate-reverse}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-40px,30px) scale(1.12)}}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta-center{justify-content:center;margin-top:28px}
+.note-center{text-align:center}
+.final{text-align:center;background:var(--accent-tint);border-radius:36px;padding:40px 24px}
+.final h2{margin:0 0 10px}
+.final p{margin:0 auto;max-width:520px;color:var(--muted)}
+.final .cta-center{margin-top:22px}
+@media (max-width:719px){.lead-d{display:none}}
+@media (min-width:720px){.lead-m,.who-m{display:none}}
 .stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px}
 .stores .badge{display:inline-flex;align-items:center}
 .stores .badge img{display:block;height:46px;width:auto}
@@ -313,8 +321,10 @@ footer a{color:var(--muted)}
       <p class="eyebrow"><span class="hr">Raspored za salone i male uslužne obrte</span><span class="en">Scheduling for salons and small service businesses</span></p>
       <h1 class="hr">Svi termini <em>na svom mjestu.</em></h1>
       <h1 class="en">Every appointment <em>in its place.</em></h1>
-      <p class="lead hr">Bukoteka je jednostavan raspored termina za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte. Termine upisuješ sam nakon poziva, a po želji klijenti mogu rezervirati i sami preko poveznice.</p>
-      <p class="lead en">Bukoteka is a simple appointment schedule for hair and beauty salons, nail studios, barbers, massage and other service businesses. Add appointments yourself after a call, or let clients book through a link.</p>
+      <p class="lead lead-m hr">Raspored za tvoj salon. Upiši termin nakon poziva ili dopusti klijentima da rezerviraju sami.</p>
+      <p class="lead lead-m en">A schedule for your business. Add an appointment after a call, or let clients book by themselves.</p>
+      <p class="lead lead-d hr">Bukoteka je jednostavan raspored termina za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte. Termine upisuješ sam nakon poziva, a po želji klijenti mogu rezervirati i sami preko poveznice.</p>
+      <p class="lead lead-d en">Bukoteka is a simple appointment schedule for hair and beauty salons, nail studios, barbers, massage and other service businesses. Add appointments yourself after a call, or let clients book through a link.</p>
       <div class="cta">
         <a class="btn btn-primary" href="https://app.bukoteka.hr/"><span class="plus" aria-hidden="true">+</span><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a>
         <a class="btn btn-light" href="#video"><span class="hr">Pogledaj kako radi (1 min)</span><span class="en">See how it works (1 min)</span></a>
@@ -328,6 +338,8 @@ footer a{color:var(--muted)}
         <p class="soon hr">Aplikacije za iPhone i Android su na pregledu u trgovinama. Uskoro ih možeš preuzeti.</p>
         <p class="soon en">The iPhone and Android apps are in store review. Available soon.</p>
       </div>
+      <p class="note who-m hr">Za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte.</p>
+      <p class="note who-m en">For hair and beauty salons, nail studios, barbers, massage and other service businesses.</p>
     </div>
 
     <div class="stage" aria-hidden="true">
@@ -494,8 +506,9 @@ footer a{color:var(--muted)}
         <p class="price"><b>15 €</b> <span class="per hr">mjesečno</span><span class="per en">per month</span><small class="hr">ili 150 € godišnje (2 mjeseca gratis)</small><small class="en">or €150 per year (2 months free)</small></p>
       </div>
     </div>
-    <p class="note hr">Cijene su konačne: Velora nije u sustavu PDV-a. Prvih 30 dana besplatno. Bez upisa podataka za plaćanje.</p>
-    <p class="note en">Prices are final: Velora is not registered for VAT. The first 30 days are free. No payment details required.</p>
+    <div class="cta cta-center reveal"><a class="btn btn-primary" href="https://app.bukoteka.hr/"><span class="plus" aria-hidden="true">+</span><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a></div>
+    <p class="note note-center hr">Cijene su konačne: Velora nije u sustavu PDV-a. Prvih 30 dana besplatno. Bez upisa podataka za plaćanje.</p>
+    <p class="note note-center en">Prices are final: Velora is not registered for VAT. The first 30 days are free. No payment details required.</p>
   </div>
 </section>
 
@@ -562,6 +575,18 @@ footer a{color:var(--muted)}
       <details><summary>Do my clients need an account?</summary><p>No. With Bukoteka Online, clients open your booking link, pick a service and time, and enter their name and phone. They get their own link to change or cancel under your rules.</p></details>
       <details><summary>Does Bukoteka send SMS reminders?</summary><p>No. Bukoteka does not currently send automatic SMS or email messages.</p></details>
       <details><summary>Can several staff members have their own schedules?</summary><p>Yes. If several people work at your business, you set each person's working hours and services, and each appointment is linked to the person providing it. You can send staff a sign-in link and revoke their access at any time.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ZAVRŠNI POZIV -->
+<section id="kreni" class="tight">
+  <div class="wrap">
+    <div class="final reveal">
+      <h2 class="hr">Kreni danas<span class="dot">.</span></h2><h2 class="en">Start today<span class="dot">.</span></h2>
+      <p class="hr">Prvih 30 dana besplatno, ne treba ti bankovna kartica. Salon postaviš za nekoliko minuta.</p>
+      <p class="en">First 30 days free, no bank card needed. Set up your business in a few minutes.</p>
+      <div class="cta cta-center"><a class="btn btn-primary" href="https://app.bukoteka.hr/"><span class="plus" aria-hidden="true">+</span><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a></div>
     </div>
   </div>
 </section>
