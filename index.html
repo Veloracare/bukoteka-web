@@ -26,7 +26,7 @@
   Bez vanjskih skripti, trackera, kolačića i fontova s tuđih poslužitelja.
   Fontovi aplikacije (Manrope, DM Sans) ovdje se NE učitavaju s Google Fonts zbog privatnosti;
   ako se žele, datoteke fontova treba smjestiti uz stranicu (self-host).
-  Rezervirana mjesta za popuniti: poveznica aplikacije (zasad https://taman-termini-ivan.ivan-brezac.chatgpt.site/, mijenja se kad se aplikacija preseli), [CIJENA — čeka potvrdu], [BROJ — čeka eSIM].
+  Rezervirana mjesta za popuniti: poveznica aplikacije (zasad https://app.bukoteka.hr/, mijenja se kad se aplikacija preseli), [CIJENA — čeka potvrdu].
   Obrazac se za sada šalje preko mailto:advisory@veloracare.io (otvara korisnikov program za e-poštu); nema vanjskog servisa za obrasce.
 -->
 <style>
@@ -63,6 +63,13 @@ h1 em{font-style:normal;color:var(--teal-text)}
 .lead{font-size:18px;color:var(--muted);max-width:620px;margin:0 0 24px}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .note{font-size:13px;color:var(--muted);margin-top:14px}
+/* trgovine: službene oznake; poveznice se uključuju kad aplikacija bude javno u trgovini (D-53) */
+.stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:18px}
+.stores .badge{display:inline-flex;align-items:center}
+.stores .badge img{display:block;height:44px;width:auto}
+.stores .badge.gp img{height:64px;margin:-10px -9px}
+.stores .soon{font-size:13px;color:var(--muted);width:100%;margin:2px 0 0}
+[lang=en] .stores .hr,html:not([lang=en]) .stores .en{display:none}
 /* sections */
 section{padding:36px 0;border-top:1px solid var(--line)}
 h2{font-weight:700;font-size:clamp(24px,5vw,32px);letter-spacing:-.8px;line-height:1.2;margin:0 0 8px}
@@ -161,11 +168,18 @@ footer a{color:var(--muted)}
   <p class="lead hr">Bukoteka je jednostavan raspored termina za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte. Termine upisuješ sam nakon poziva, a po želji klijenti mogu rezervirati i sami preko poveznice.</p>
   <p class="lead en">Bukoteka is a simple appointment schedule for hair and beauty salons, nail studios, barbers, massage and other service businesses. Add appointments yourself after a call, or let clients book through a link.</p>
   <div class="cta">
-    <a class="btn btn-primary" href="https://taman-termini-ivan.ivan-brezac.chatgpt.site/"><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a>
+    <a class="btn btn-primary" href="https://app.bukoteka.hr/"><span class="hr">Isprobaj 30 dana besplatno</span><span class="en">Try free for 30 days</span></a>
     <a class="btn btn-light" href="#video"><span class="hr">Pogledaj kako radi (1 min)</span><span class="en">See how it works (1 min)</span></a>
   </div>
   <p class="note hr">Bez kartice. Radi u pregledniku na mobitelu i računalu, uz internetsku vezu.</p>
   <p class="note en">No card needed. Works in the browser on phone and computer, with an internet connection.</p>
+  <div class="stores" id="trgovine">
+    <!-- Poveznice: https://apps.apple.com/hr/app/id6837406347 i https://play.google.com/store/apps/details?id=hr.bukoteka.app — uključiti kad trgovine odobre i aplikacija bude objavljena. -->
+    <span class="badge"><img class="hr" src="img/app-store-hr.svg" alt="Preuzmi u App Storeu"><img class="en" src="img/app-store-en.svg" alt="Download on the App Store"></span>
+    <span class="badge gp"><img class="hr" src="img/google-play-hr.png" alt="Preuzmite na Google Playu"><img class="en" src="img/google-play-en.png" alt="Get it on Google Play"></span>
+    <p class="soon hr">Aplikacije za iPhone i Android su na pregledu u trgovinama. Uskoro ih možeš preuzeti.</p>
+    <p class="soon en">The iPhone and Android apps are in store review. Available soon.</p>
+  </div>
 </div>
 
 <!-- VIDEO -->
@@ -308,14 +322,14 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <h2 class="hr">Česta pitanja</h2><h2 class="en">FAQ</h2>
     <div class="hr">
-      <details><summary>Trebam li instalirati aplikaciju?</summary><p>Ne moraš. Bukoteka radi u pregledniku na mobitelu, tabletu i računalu, bez instalacije. Aplikacije za iPhone i Android su u pripremi, za one koji ih žele. Potrebna je internetska veza.</p></details>
+      <details><summary>Trebam li instalirati aplikaciju?</summary><p>Ne moraš. Bukoteka radi u pregledniku na mobitelu, tabletu i računalu, bez instalacije. Aplikacije za iPhone i Android su na pregledu u App Storeu i Google Playu i uskoro ih možeš preuzeti. Potrebna je internetska veza.</p></details>
       <details><summary>Što se događa nakon 30 dana probe?</summary><p>Ništa se ne naplaćuje automatski. Podatke i dalje možeš pregledati i izvesti, a za nove upise i izmjene biraš pretplatu.</p></details>
       <details><summary>Moraju li moji klijenti imati račun?</summary><p>Ne. Uz Bukoteku Online klijent otvara poveznicu salona, bira uslugu i vrijeme te upisuje ime i telefon. Dobiva svoju poveznicu za promjenu ili otkazivanje prema tvojim pravilima.</p></details>
       <details><summary>Šalje li Bukoteka SMS podsjetnike klijentima?</summary><p>Ne. Bukoteka trenutno ne šalje automatske SMS ni e-mail poruke.</p></details>
       <details><summary>Može li više djelatnika imati svoj raspored?</summary><p>Da. Ako u salonu radi više osoba, svakoj upišeš radno vrijeme i usluge koje radi, a svaki termin vežeš uz osobu koja pruža uslugu. Djelatnicima možeš poslati poveznicu za prijavu i ukinuti im pristup kad želiš.</p></details>
     </div>
     <div class="en">
-      <details><summary>Do I need to install an app?</summary><p>You don't have to. Bukoteka runs in the browser on phone, tablet and computer, with nothing to install. Apps for iPhone and Android are on the way, for those who want them. An internet connection is required.</p></details>
+      <details><summary>Do I need to install an app?</summary><p>You don't have to. Bukoteka runs in the browser on phone, tablet and computer, with nothing to install. Apps for iPhone and Android are in review on the App Store and Google Play and will be available soon. An internet connection is required.</p></details>
       <details><summary>What happens after the 30-day trial?</summary><p>Nothing is charged automatically. You can still view and export your data; new entries and changes need a subscription.</p></details>
       <details><summary>Do my clients need an account?</summary><p>No. With Bukoteka Online, clients open your booking link, pick a service and time, and enter their name and phone. They get their own link to change or cancel under your rules.</p></details>
       <details><summary>Does Bukoteka send SMS reminders?</summary><p>No. Bukoteka does not currently send automatic SMS or email messages.</p></details>
@@ -364,8 +378,8 @@ footer a{color:var(--muted)}
       <div class="wa">
         <p class="hr">Radije pišeš na WhatsApp? Napiši nam prvi, odgovorit ćemo. Ne šaljemo poruke bez tvog upita.</p>
         <p class="en">Prefer WhatsApp? Message us first and we'll reply. We don't send messages you didn't ask for.</p>
-        <!-- Zamijeniti href s https://wa.me/<broj> kad broj bude aktivan. -->
-        <a class="btn btn-light" href="#kontakt" aria-disabled="true" title="Broj još nije aktivan"><span class="hr">Pošalji poruku na WhatsApp</span><span class="en">Message us on WhatsApp</span> <span class="placeholder">[BROJ — čeka eSIM]</span></a>
+        <a class="btn btn-light" href="https://wa.me/385919767046"><span class="hr">Pošalji poruku na WhatsApp</span><span class="en">Message us on WhatsApp</span></a>
+        <p class="note">+385 91 976 7046</p>
       </div>
     </div>
   </div>
