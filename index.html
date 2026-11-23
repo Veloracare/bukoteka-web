@@ -25,7 +25,7 @@
   Bez vanjskih skripti, trackera, kolačića i fontova s tuđih poslužitelja. Font Bricolage Grotesque je uz stranicu (/fonts, OFL).
   Slike u /img/app su odobrene snimke za trgovine (D-54), izmišljeni „Salon Primjer”.
   Oznake trgovina: službene (Apple, Google). Poveznice se uključuju kad aplikacija bude javno u trgovini.
-  Rezervirano mjesto: [CIJENA — čeka potvrdu].
+  Cijene (Ivan 23. 11. 2026., kao u pilotu): Bukoteka 9 €/mj. ili 90 €/god., Bukoteka Online 15 €/mj. ili 150 €/god.
   Obrazac se šalje preko mailto:advisory@veloracare.io (otvara korisnikov program za e-poštu); nema vanjskog servisa za obrasce.
 -->
 <style>
@@ -97,8 +97,7 @@ h2 .dot{color:var(--accent-strong)}
 .cta{display:flex;flex-wrap:wrap;gap:10px}
 .stores{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:22px}
 .stores .badge{display:inline-flex;align-items:center}
-.stores .badge img{display:block;height:44px;width:auto}
-.stores .badge.gp img{height:64px;margin:-10px -9px}
+.stores .badge img{display:block;height:46px;width:auto}
 .stores .soon{font-size:13px;color:var(--muted);width:100%;margin:0;display:flex;align-items:center;gap:8px}
 .stores .soon:before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:#e0a94a;animation:pulse 2s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 #e0a94a80}70%{box-shadow:0 0 0 8px #e0a94a00}100%{box-shadow:0 0 0 0 #e0a94a00}}
@@ -194,7 +193,11 @@ section.tight{padding-top:0}
 .offer ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
 .offer li{display:flex;gap:10px;font-size:15px}
 .offer li:before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent-strong);margin-top:9px}
-.price{font-weight:600;font-size:18px;margin:20px 0 0}
+.price{margin:auto 0 0;padding-top:20px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px}
+.price b{font-size:40px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.price .per{color:var(--muted);font-size:15px}
+.price small{width:100%;color:var(--muted);font-size:14px}
+[lang=en] .price .hr,html:not([lang=en]) .price .en{display:none}
 .placeholder{background:#fff4d6;color:#8a5a00;border-radius:6px;padding:1px 6px;font-size:14px;font-weight:600}
 
 /* proba */
@@ -355,12 +358,12 @@ footer a{color:var(--muted)}
 
 <div class="ticker" aria-hidden="true">
   <ul class="hr">
-    <li>30 dana besplatno</li><li>Bez kartice</li><li>Hrvatski blagdani već upisani</li><li>Online rezervacije</li><li>Više djelatnika</li><li>Hrvatski i engleski</li><li>Mobitel, tablet i računalo</li><li>Bez oglasa</li>
-    <li>30 dana besplatno</li><li>Bez kartice</li><li>Hrvatski blagdani već upisani</li><li>Online rezervacije</li><li>Više djelatnika</li><li>Hrvatski i engleski</li><li>Mobitel, tablet i računalo</li><li>Bez oglasa</li>
+    <li>30 dana besplatno</li><li>Bez kartice</li><li>Blagdani već upisani</li><li>Online rezervacije</li><li>Više djelatnika</li><li>Hrvatski i engleski</li><li>Mobitel, tablet i računalo</li><li>Bez oglasa</li>
+    <li>30 dana besplatno</li><li>Bez kartice</li><li>Blagdani već upisani</li><li>Online rezervacije</li><li>Više djelatnika</li><li>Hrvatski i engleski</li><li>Mobitel, tablet i računalo</li><li>Bez oglasa</li>
   </ul>
   <ul class="en">
-    <li>30 days free</li><li>No card</li><li>Croatian holidays built in</li><li>Online booking</li><li>Several staff members</li><li>Croatian and English</li><li>Phone, tablet and computer</li><li>No ads</li>
-    <li>30 days free</li><li>No card</li><li>Croatian holidays built in</li><li>Online booking</li><li>Several staff members</li><li>Croatian and English</li><li>Phone, tablet and computer</li><li>No ads</li>
+    <li>30 days free</li><li>No card</li><li>Public holidays built in</li><li>Online booking</li><li>Several staff members</li><li>Croatian and English</li><li>Phone, tablet and computer</li><li>No ads</li>
+    <li>30 days free</li><li>No card</li><li>Public holidays built in</li><li>Online booking</li><li>Several staff members</li><li>Croatian and English</li><li>Phone, tablet and computer</li><li>No ads</li>
   </ul>
 </div>
 
@@ -377,8 +380,8 @@ footer a{color:var(--muted)}
       <div class="text reveal">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4m8-4v4"/></svg></div>
         <h3 class="hr">Raspored</h3><h3 class="en">Schedule</h3>
-        <p class="hr">Usluge i trajanja, radno vrijeme, dnevni odmori, slobodni dani i hrvatski blagdani na jednom mjestu.</p>
-        <p class="en">Services and durations, opening hours, daily breaks, days off and Croatian public holidays in one place.</p>
+        <p class="hr">Usluge i trajanja, radno vrijeme, dnevni odmori, slobodni dani i državni blagdani na jednom mjestu.</p>
+        <p class="en">Services and durations, opening hours, daily breaks, days off and public holidays in one place.</p>
         <ul class="pills hr"><li>dnevni pregled</li><li>dva tjedna na dlanu</li><li>blagdani već upisani</li></ul>
         <ul class="pills en"><li>day view</li><li>two weeks at a glance</li><li>holidays built in</li></ul>
       </div>
@@ -478,7 +481,7 @@ footer a{color:var(--muted)}
         <p class="en">For businesses that book by phone or message. After the call, add the appointment in a few taps.</p>
         <ul class="hr"><li>raspored, usluge, radno vrijeme i odmori</li><li>klijenti i brzi upis</li><li>hrvatski i engleski</li></ul>
         <ul class="en"><li>schedule, services, hours and breaks</li><li>clients and quick entry</li><li>Croatian and English</li></ul>
-        <p class="price"><span class="placeholder">[CIJENA — čeka potvrdu]</span></p>
+        <p class="price"><b>9 €</b> <span class="per hr">mjesečno</span><span class="per en">per month</span><small class="hr">ili 90 € godišnje (2 mjeseca gratis)</small><small class="en">or €90 per year (2 months free)</small></p>
       </div>
       <div class="card offer hl reveal d1">
         <span class="tag">Bukoteka Online</span>
@@ -487,11 +490,11 @@ footer a{color:var(--muted)}
         <p class="en">Everything in Bukoteka, plus a booking link you can share on social media or your Google Business Profile.</p>
         <ul class="hr"><li>klijent ne treba račun</li><li>ti određuješ pravila promjene i otkazivanja</li><li>online rezervacije uključuješ i isključuješ u Postavkama</li></ul>
         <ul class="en"><li>clients don't need an account</li><li>you set the change and cancellation rules</li><li>turn online booking on or off in Settings</li></ul>
-        <p class="price"><span class="placeholder">[CIJENA — čeka potvrdu]</span></p>
+        <p class="price"><b>15 €</b> <span class="per hr">mjesečno</span><span class="per en">per month</span><small class="hr">ili 150 € godišnje (2 mjeseca gratis)</small><small class="en">or €150 per year (2 months free)</small></p>
       </div>
     </div>
-    <p class="note hr">Cijene još nisu konačne i bit će objavljene nakon potvrde.</p>
-    <p class="note en">Prices are not final yet and will be published once confirmed.</p>
+    <p class="note hr">Cijene su konačne: Velora nije u sustavu PDV-a. Prvih 30 dana besplatno, bez kartice.</p>
+    <p class="note en">Prices are final: Velora is not registered for VAT. The first 30 days are free, no card needed.</p>
   </div>
 </section>
 
