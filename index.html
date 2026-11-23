@@ -26,7 +26,7 @@
   Slike u /img/app su odobrene snimke za trgovine (D-54), izmišljeni „Salon Primjer”.
   Oznake trgovina: službene (Apple, Google). Poveznice se uključuju kad aplikacija bude javno u trgovini.
   Cijene (Ivan 23. 11. 2026., kao u pilotu): Bukoteka 9 €/mj. ili 90 €/god., Bukoteka Online 15 €/mj. ili 150 €/god.
-  Obrazac se šalje preko mailto:advisory@veloracare.io (otvara korisnikov program za e-poštu); nema vanjskog servisa za obrasce.
+  Obrazac šalje upit na https://app.bukoteka.hr/api/lead (naša aplikacija, D-59): sprema se u bazu, a obavijest stiže e-mailom. Nema vanjskog servisa za obrasce. Ako slanje ne uspije, nudi se e-mail kao rezerva.
 -->
 <style>
 @font-face{font-family:'Bricolage Grotesque';src:url('/fonts/bricolage-grotesque.woff2?v=1') format('woff2');font-weight:400 600;font-style:normal;font-display:swap;unicode-range:U+0000-017F,U+0218-021B,U+02C6-02DC,U+2000-206F,U+20AC,U+2122,U+2190-2193,U+2212}
@@ -247,6 +247,13 @@ form.interest input[type=text]:focus,form.interest select:focus{border-color:var
 .consent input{width:20px;height:20px;margin:2px 0 0;flex-shrink:0;accent-color:var(--accent-strong)}
 .formnote{font-size:13px;color:var(--muted);margin:0}
 .formerror{color:#a3352b;font-size:14px;font-weight:600;margin:0}
+.formerror a{color:inherit}
+form.interest .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.sent{background:var(--accent-tint);border-radius:20px;padding:22px;margin-top:8px}
+.sent h3{margin:0 0 6px;font-size:20px}
+.sent p{margin:0;color:var(--muted)}
+.sent:focus{outline:none}
+form.interest[hidden],.sent[hidden]{display:none}
 .wa{background:var(--accent-tint);border-radius:24px;padding:22px}
 .wa h3{margin:0 0 6px;font-size:20px}
 .wa p{margin:0 0 14px;font-size:15px;color:var(--muted)}
@@ -600,7 +607,8 @@ footer a{color:var(--muted)}
         <p class="hr"><strong>Javi nam se.</strong> Ostavi nekoliko podataka i javit ćemo ti se da zajedno postavimo tvoj salon u Bukoteci. Bez obveze.</p>
         <p class="en"><strong>Get in touch.</strong> Leave a few details and we'll get back to you to set up your business in Bukoteka together. No obligation.</p>
 
-        <form class="interest" id="interest" action="mailto:advisory@veloracare.io" method="post" enctype="text/plain" novalidate>
+        <form class="interest" id="interest" novalidate>
+          <label class="hp" aria-hidden="true">Web <input type="text" name="web" id="f-web" tabindex="-1" autocomplete="off"></label>
           <label><span class="hr">Naziv salona</span><span class="en">Business name</span>
             <input type="text" name="salon" id="f-salon" required maxlength="100" autocomplete="organization"></label>
           <label><span class="hr">Ime</span><span class="en">Your name</span>
@@ -624,10 +632,15 @@ footer a{color:var(--muted)}
             <span class="en">I agree that Velora may contact me about Bukoteka at the email or phone above. I can withdraw this consent at any time. <a href="/privatnost?lang=en">Privacy</a></span></label>
           <p class="formerror full" id="f-error" role="alert" hidden></p>
           <div class="full">
-            <button class="btn btn-primary" type="submit"><span class="hr">Pošalji</span><span class="en">Send</span></button>
+            <button class="btn btn-primary" type="submit" id="f-send"><span class="hr">Pošalji</span><span class="en">Send</span></button>
           </div>
-          <p class="formnote full"><span class="hr">Klikom se otvara tvoj program za e-poštu s pripremljenom porukom na advisory@veloracare.io. Ništa se ne šalje dok poruku sam ne pošalješ.</span><span class="en">This opens your email app with a prepared message to advisory@veloracare.io. Nothing is sent until you send it yourself.</span></p>
+          <p class="formnote full"><span class="hr">Upit nam stiže odmah, a javljamo ti se u roku od jednog radnog dana.</span><span class="en">Your message reaches us right away, and we'll get back to you within one working day.</span></p>
         </form>
+        <div class="sent" id="f-sent" role="status" tabindex="-1" hidden>
+          <h3 class="hr">Hvala, upit je poslan.</h3><h3 class="en">Thank you, your message has been sent.</h3>
+          <p class="hr">Javit ćemo ti se u roku od jednog radnog dana na kontakt koji si upisao ili upisala. Ako ti se žuri, piši nam na WhatsApp.</p>
+          <p class="en">We'll get back to you within one working day at the contact you entered. If it's urgent, message us on WhatsApp.</p>
+        </div>
       </div>
 
       <div class="wa">
@@ -665,8 +678,22 @@ footer a{color:var(--muted)}
     if(miss){err.textContent=en?'Please fill in all fields.':'Molimo ispuni sva polja.';err.hidden=false;return;}
     if(!document.getElementById('f-privola').checked){err.textContent=en?'Please tick the consent box so we can contact you.':'Označi privolu kako bismo ti se mogli javiti.';err.hidden=false;return;}
     err.hidden=true;
-    var body='Naziv salona: '+v.salon+'\nIme: '+v.ime+'\nE-mail ili telefon: '+v.kontakt+'\nDjelatnost: '+v.djelatnost+'\nGrad: '+v.grad+'\nPrivola za kontakt u vezi s Bukotekom: da\n';
-    window.location.href='mailto:advisory@veloracare.io?subject='+encodeURIComponent('Bukoteka — pilot: '+v.salon)+'&body='+encodeURIComponent(body);
+    var btn=document.getElementById('f-send');btn.disabled=true;
+    var fallback=function(msg){
+      var body='Naziv salona: '+v.salon+'\nIme: '+v.ime+'\nE-mail ili telefon: '+v.kontakt+'\nDjelatnost: '+v.djelatnost+'\nGrad: '+v.grad+'\nPrivola za kontakt u vezi s Bukotekom: da\n';
+      var href='mailto:advisory@veloracare.io?subject='+encodeURIComponent('Bukoteka — upit: '+v.salon)+'&body='+encodeURIComponent(body);
+      err.textContent='';err.appendChild(document.createTextNode(msg+' '));
+      var a=document.createElement('a');a.href=href;a.textContent=en?'Send it by email instead':'Pošalji upit e-mailom';err.appendChild(a);
+      err.hidden=false;btn.disabled=false;
+    };
+    fetch('https://app.bukoteka.hr/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({salon:v.salon,ime:v.ime,kontakt:v.kontakt,djelatnost:v.djelatnost,grad:v.grad,privola:true,lang:en?'en':'hr',web:document.getElementById('f-web').value})})
+      .then(function(r){return r.json().catch(function(){return {};}).then(function(d){return {ok:r.ok,d:d,status:r.status};});})
+      .then(function(x){
+        if(x.ok){f.hidden=true;var s=document.getElementById('f-sent');s.hidden=false;s.focus();return;}
+        if(x.status===400&&x.d.error){err.textContent=x.d.error;err.hidden=false;btn.disabled=false;return;}
+        fallback(x.d.error||(en?'Sending failed.':'Slanje nije uspjelo.'));
+      })
+      .catch(function(){fallback(en?'Sending failed. Check your connection.':'Slanje nije uspjelo. Provjeri vezu.');});
   });
 
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
