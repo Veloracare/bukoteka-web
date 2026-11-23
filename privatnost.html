@@ -155,7 +155,6 @@ footer a{color:var(--muted)}
 
 <main class="wrap doc">
 <article class="hr">
-<p class="draftnote">Verzija 2026-11-20 — nacrt za pregled vlasnika</p>
 <p class="eyebrow">Bukoteka · Velora</p>
 <h1>Privatnost.</h1>
 <p>Bukoteka je aplikacija za raspored termina salona i malih uslužnih obrta. Radi u pregledniku te kao aplikacija za Android i iOS. Ova obavijest vrijedi za sve tri i objašnjava tko obrađuje koje podatke, zašto, gdje se čuvaju i kako ih možeš izvesti ili obrisati.</p>
@@ -187,7 +186,7 @@ footer a{color:var(--muted)}
 <p>Podaci računa obrađuju se radi pružanja usluge (ugovor) i zaštite od zloupotrebe (legitimni interes). Podaci klijenata obrađuju se po uputi salona, radi vođenja njegova rasporeda i online rezervacija. Salon je odgovoran za pravnu osnovu i obavještavanje svojih klijenata.</p>
 
 <h2>Gdje se podaci čuvaju</h2>
-<p>Prijavu (Google, Apple i e-mail) omogućuje Firebase Authentication (Google), koji u mobilnim aplikacijama radi i na uređaju; vrijede i <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleova pravila privatnosti</a>. Aplikacija i baza rasporeda nalaze se na platformi Sites s pripadajućom bazom (D1); obrada na platformi podliježe i <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">pravilima privatnosti OpenAI-ja</a>. Izvorni kod je na GitHubu; korisnička baza nije tamo. Pretplata se, kad je uključena, plaća na webu preko Stripea; kartične podatke obrađuje Stripe, a Bukoteka ih ne pohranjuje. Mobilne aplikacije Android i iOS samo prikazuju web aplikaciju u vlastitom okviru; ne sadrže oglase, analitiku ni praćenje.</p>
+<p>Prijavu (Google, Apple i e-mail) omogućuje Firebase Authentication (Google), koji u mobilnim aplikacijama radi i na uređaju; vrijede i <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleova pravila privatnosti</a>. Aplikacija i baza rasporeda nalaze se na Cloudflareu (Workers i baza D1, smještena u EU); vrijede i <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflareova pravila privatnosti</a>. Izvorni kod je na GitHubu; korisnička baza nije tamo. Pretplata se, kad je uključena, plaća na webu preko Stripea; kartične podatke obrađuje Stripe, a Bukoteka ih ne pohranjuje. Mobilne aplikacije Android i iOS samo prikazuju web aplikaciju u vlastitom okviru; ne sadrže oglase, analitiku ni praćenje.</p>
 
 <h2>Tko ima pristup</h2>
 <p>Svaki račun vidi samo vlastiti salon. Drugi saloni nemaju pristup. Vlasnik projekta čita povratne informacije; kao operator može pristupiti pohranjenim podacima radi podrške i održavanja, samo kad je to potrebno. Na javnoj poveznici za online rezervacije vide se naziv, usluge, kontakt i pravila salona, imena osoba koje primaju klijente (ako ih je više) te slobodni termini, ali ne i podaci drugih klijenata. Potvrde se ne šalju automatski e-mailom ni SMS-om.</p>
@@ -207,11 +206,10 @@ footer a{color:var(--muted)}
 
 <h2>Proba i pretplata</h2>
 <p>Proba od 30 dana ne traži karticu i ne prelazi automatski u plaćenu pretplatu.</p>
-<p class="hint">Verzija 2026-11-20 (nacrt), dopunjena 2026-11-21 dijelom o upitima s web stranice. Zamjenjuje obavijest za pilot iz studenoga 2026.</p>
+<p class="hint">Verzija 2026-11-23: dopunjena 2026-11-21 dijelom o upitima s web stranice, 2026-11-23 smještaj aplikacije na Cloudflare. Zamjenjuje obavijest za pilot iz studenoga 2026.</p>
 </article>
 
 <article class="en">
-<p class="draftnote">Version 2026-11-20 — draft for owner review</p>
 <p class="eyebrow">Bukoteka · Velora</p>
 <h1>Privacy.</h1>
 <p>Bukoteka is an appointment scheduling app for salons and small service businesses. It runs in the browser and as an Android and iOS app. This notice covers all three and explains who processes which data, why, where it is stored and how you can export or delete it.</p>
@@ -243,7 +241,7 @@ footer a{color:var(--muted)}
 <p>Account data is processed to provide the service (contract) and to prevent abuse (legitimate interest). Client data is processed on the business's instructions to run its schedule and online booking. The business is responsible for the legal basis and for informing its clients.</p>
 
 <h2>Where data is stored</h2>
-<p>Sign-in (Google, Apple and e-mail) is provided by Firebase Authentication (Google), which in the mobile apps also runs on the device; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> also applies. The app and the schedule database run on the Sites platform with its database (D1); processing on the platform is also subject to <a href="https://openai.com/policies/privacy-policy/" target="_blank" rel="noopener">OpenAI's privacy policy</a>. Source code is on GitHub; the user database is not. When a subscription is enabled it is paid on the web through Stripe; card data is processed by Stripe and Bukoteka does not store it. The Android and iOS apps only show the web app in their own frame; they contain no ads, analytics or tracking.</p>
+<p>Sign-in (Google, Apple and e-mail) is provided by Firebase Authentication (Google), which in the mobile apps also runs on the device; <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a> also applies. The app and the schedule database run on Cloudflare (Workers and a D1 database located in the EU); <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's privacy policy</a> also applies. Source code is on GitHub; the user database is not. When a subscription is enabled it is paid on the web through Stripe; card data is processed by Stripe and Bukoteka does not store it. The Android and iOS apps only show the web app in their own frame; they contain no ads, analytics or tracking.</p>
 
 <h2>Who has access</h2>
 <p>Each account sees only its own business. Other businesses have no access. The project owner reads feedback; as operator, the owner can access stored data for support and maintenance only when needed. The public online booking link shows the business name, services, contact, rules, the names of the people taking clients (if there are several) and available times, but not other clients' data. Confirmations are not sent automatically by e-mail or SMS.</p>
@@ -263,7 +261,7 @@ footer a{color:var(--muted)}
 
 <h2>Trial and subscription</h2>
 <p>The 30-day trial does not ask for a card and never turns into a paid subscription automatically.</p>
-<p class="hint">Version 2026-11-20 (draft), supplemented on 2026-11-21 with the section on website inquiries. Replaces the pilot notice of November 2026.</p>
+<p class="hint">Version 2026-11-23: supplemented on 2026-11-21 with the section on website inquiries and on 2026-11-23 with hosting on Cloudflare. Replaces the pilot notice of November 2026.</p>
 </article>
 </main>
 
