@@ -282,6 +282,8 @@ footer a{color:var(--muted)}
   .online{padding:56px}
   .online .pair{grid-template-columns:1.1fr 1fr 1fr}
   .contact{grid-template-columns:1.25fr .75fr;padding:44px}
+  .follow-row{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;padding:0 44px}
+  .follow-row .follow{grid-column:2}
   form.interest{grid-template-columns:1fr 1fr}
   form.interest .full{grid-column:1/-1}
   footer .wrap{grid-template-columns:1fr auto;align-items:center}
@@ -301,7 +303,7 @@ footer a{color:var(--muted)}
 footer .social{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px}
 footer .social a{display:inline-flex;align-items:center;gap:6px;text-decoration:none}
 footer .social a:hover{color:var(--ink,inherit)}
-.side{display:grid;gap:18px;align-content:start}
+.follow-row{margin-top:24px}
 .follow{text-align:center}
 .follow-t{margin:0 0 10px;font-size:16px;font-weight:600;color:var(--ink)}
 .follow-i{display:flex;justify-content:center;gap:10px}
@@ -653,21 +655,21 @@ footer .social a:hover{color:var(--ink,inherit)}
         </div>
       </div>
 
-      <div class="side">
       <div class="wa">
         <h3>WhatsApp</h3>
         <p class="hr">Radije pišeš na WhatsApp? Napiši nam prvi, odgovorit ćemo. Ne šaljemo poruke bez tvog upita.</p>
         <p class="en">Prefer WhatsApp? Message us first and we'll reply. We don't send messages you didn't ask for.</p>
         <a class="btn btn-primary" href="https://wa.me/385919767046"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg><span class="hr">Pošalji poruku na WhatsApp</span><span class="en">Message us on WhatsApp</span></a>
       </div>
-      <div class="follow">
-        <p class="follow-t"><span class="hr">Prati nas na društvenim mrežama</span><span class="en">Follow us on social media</span></p>
-        <div class="follow-i">
-          <a href="https://www.instagram.com/bukoteka.hr/" target="_blank" rel="noopener" aria-label="Bukoteka na Instagramu / on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
-          <a href="https://www.facebook.com/bukoteka.hr" target="_blank" rel="noopener" aria-label="Bukoteka na Facebooku / on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.2v3h2.5V21z"/></svg><span>Facebook</span></a>
+    </div>
+    <div class="follow-row">
+        <div class="follow">
+          <p class="follow-t"><span class="hr">Prati nas na društvenim mrežama</span><span class="en">Follow us on social media</span></p>
+          <div class="follow-i">
+            <a href="https://www.instagram.com/bukoteka.hr/" target="_blank" rel="noopener" aria-label="Bukoteka na Instagramu / on Instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a>
+            <a href="https://www.facebook.com/bukoteka.hr" target="_blank" rel="noopener" aria-label="Bukoteka na Facebooku / on Facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.2v3h2.5V21z"/></svg><span>Facebook</span></a>
+          </div>
         </div>
-      </div>
-      </div>
     </div>
   </div>
 </section>
