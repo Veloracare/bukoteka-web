@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bukoteka — svi termini na svom mjestu</title>
-<meta name="description" content="Bukoteka je jednostavan raspored termina za salone i male uslužne obrte. Svi termini na svom mjestu. Radi u pregledniku na mobitelu i računalu.">
+<title>Bukoteka — aplikacija za naručivanje i raspored termina</title>
+<meta name="description" content="Online rezervacije i raspored termina za salone, brijačnice, masažu, groomere, vulkanizere i male obrte. Mobitel i računalo. 30 dana besplatno.">
 <meta name="theme-color" content="#f6f3f0">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -15,8 +15,8 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bukoteka">
 <meta property="og:locale" content="hr_HR">
-<meta property="og:title" content="Bukoteka — svi termini na svom mjestu">
-<meta property="og:description" content="Jednostavan raspored termina za salone i male uslužne obrte. Radi u pregledniku na mobitelu i računalu.">
+<meta property="og:title" content="Bukoteka — aplikacija za naručivanje i raspored termina">
+<meta property="og:description" content="Raspored termina i online rezervacije za salone i male uslužne obrte. 30 dana besplatno, bez kartice.">
 <meta property="og:url" content="https://bukoteka.hr/">
 <meta property="og:image" content="https://bukoteka.hr/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -45,7 +45,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--font);-webkit-text-size-adjust:100%;overflow-x:hidden}
-h1,h2,h3{font-family:var(--font);font-weight:600;color:var(--ink)}
+h1,h2,h3,.h1{font-family:var(--font);font-weight:600;color:var(--ink)}
 a{color:var(--teal)}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--accent-strong);outline-offset:3px}
 img{max-width:100%}
@@ -79,9 +79,9 @@ img{max-width:100%}
 /* naslovi */
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin:0 0 14px;display:flex;align-items:center;gap:8px}
 .eyebrow:before{content:'';flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent-strong)}
-h1{font-size:clamp(40px,9vw,72px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px}
-h1 em{font-style:normal;color:var(--accent-strong);position:relative;white-space:nowrap;z-index:0}
-h1 em:after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--accent);opacity:.45;border-radius:4px;z-index:-1;transform-origin:left;animation:underline 1.1s .5s var(--ease) both}
+h1,.h1{font-size:clamp(40px,9vw,72px);line-height:1.02;letter-spacing:-.045em;margin:0 0 20px}
+h1 em,.h1 em{font-style:normal;color:var(--accent-strong);position:relative;white-space:nowrap;z-index:0}
+h1 em:after,.h1 em:after{content:'';position:absolute;left:0;right:0;bottom:.06em;height:.16em;background:var(--accent);opacity:.45;border-radius:4px;z-index:-1;transform-origin:left;animation:underline 1.1s .5s var(--ease) both}
 @keyframes underline{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 h2{font-size:clamp(30px,6vw,46px);line-height:1.08;letter-spacing:-.035em;margin:0 0 12px}
 h2 .dot{color:var(--accent-strong)}
@@ -312,8 +312,16 @@ footer .social a:hover{color:var(--ink,inherit)}
 .follow-i a{display:inline-flex;align-items:center;gap:7px;padding:10px 16px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;transition:transform .15s,box-shadow .15s}
 .follow-i a:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .follow-i svg{width:24px;height:24px;flex:none}
+.pills.djel a{color:inherit;text-decoration:none}.pills.djel li{font-size:15px;padding:8px 14px}
 </style>
 <script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://bukoteka.hr/#organization","name":"Bukoteka","url":"https://bukoteka.hr/","logo":"https://bukoteka.hr/icon-192.png","email":"bok@bukoteka.hr","sameAs":["https://www.instagram.com/bukoteka.hr/","https://www.facebook.com/bukoteka.hr"]},
+{"@type":"WebSite","@id":"https://bukoteka.hr/#website","name":"Bukoteka","alternateName":["bukoteka.hr"],"url":"https://bukoteka.hr/","inLanguage":"hr","publisher":{"@id":"https://bukoteka.hr/#organization"}},
+{"@type":"WebApplication","name":"Bukoteka","url":"https://app.bukoteka.hr/","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":["hr","en"],"description":"Raspored termina i online rezervacije za salone i male uslužne obrte.","publisher":{"@id":"https://bukoteka.hr/#organization"},"offers":[{"@type":"Offer","name":"Bukoteka","price":"9.00","priceCurrency":"EUR"},{"@type":"Offer","name":"Bukoteka Online","price":"15.00","priceCurrency":"EUR"}]}
+]}
+</script>
 </head>
 <body>
 
@@ -341,7 +349,7 @@ footer .social a:hover{color:var(--ink,inherit)}
     <div>
       <p class="eyebrow"><span class="hr">Raspored za salone i male uslužne obrte</span><span class="en">Scheduling for salons and small service businesses</span></p>
       <h1 class="hr">Svi termini <em>na svom mjestu.</em></h1>
-      <h1 class="en">Every appointment <em>in its place.</em></h1>
+      <p class="h1 en" role="heading" aria-level="1">Every appointment <em>in its place.</em></p>
       <p class="lead lead-m hr">Raspored za tvoj salon. Upiši termin nakon poziva ili dopusti klijentima da rezerviraju sami.</p>
       <p class="lead lead-m en">A schedule for your business. Add an appointment after a call, or let clients book by themselves.</p>
       <p class="lead lead-d hr">Bukoteka je jednostavan raspored termina za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte. Termine upisuješ sam nakon poziva, a po želji klijenti mogu rezervirati i sami preko poveznice.</p>
@@ -359,14 +367,14 @@ footer .social a:hover{color:var(--ink,inherit)}
         <p class="soon hr">Aplikacije za iPhone i Android su na pregledu u trgovinama. Uskoro ih možeš preuzeti.</p>
         <p class="soon en">The iPhone and Android apps are in store review. Available soon.</p>
       </div>
-      <p class="note who-m hr">Za frizere, kozmetičare, salone za nokte, brijačnice, masažu i druge uslužne obrte.</p>
-      <p class="note who-m en">For hair and beauty salons, nail studios, barbers, massage and other service businesses.</p>
+      <p class="note who-m hr">Za frizere, kozmetičare, salone za nokte, brijačnice, masažu, groomere, vulkanizere, trenere i druge uslužne obrte.</p>
+      <p class="note who-m en">For hair and beauty salons, nail studios, barbers, massage, pet groomers, tyre shops, trainers and other service businesses.</p>
     </div>
 
     <div class="stage" aria-hidden="true">
       <div class="phone">
         <div class="screen" id="screen">
-          <img class="on" src="img/app/01-raspored.jpg" alt="">
+          <img class="on" src="img/app/01-raspored.jpg" width="560" height="1214" alt="" fetchpriority="high">
           <img src="img/app/02-raspored-satnica.jpg" alt="" loading="lazy">
           <img src="img/app/05-detalji-termina-poziv.jpg" alt="" loading="lazy">
           <img src="img/app/11-javna-stranica-usluge.jpg" alt="" loading="lazy">
@@ -579,6 +587,14 @@ footer .social a:hover{color:var(--ink,inherit)}
 </section>
 
 <!-- FAQ -->
+<!-- DJELATNOSTI -->
+<section id="djelatnosti" class="tight">
+  <div class="wrap">
+    <p class="eyebrow"><span class="hr">Za koga je Bukoteka</span><span class="en">Who it is for</span></p>
+    <ul class="pills djel"><li><a href="/za-frizere">Frizeri</a></li><li><a href="/za-barbere">Barberi i brijačnice</a></li><li><a href="/za-vulkanizere">Vulkanizeri</a></li><li><a href="/za-groomere">Grooming saloni</a></li><li><a href="/za-masazu">Masaža i wellness</a></li><li><a href="/za-osobne-trenere">Osobni treneri, joga i pilates</a></li></ul>
+  </div>
+</section>
+
 <section id="pitanja" class="tight">
   <div class="wrap">
     <p class="eyebrow reveal"><span class="hr">Česta pitanja</span><span class="en">FAQ</span></p>
